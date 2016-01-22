@@ -26,9 +26,17 @@ v = [int(i) for i in line.split()]
   * 解凍して出てきたフォルダ群を一つにまとめる
     * CAT_DATASET - CAT_00～06
 2. 画像切り出し
-  * https://github.com/t-abe/cat-face-detection/blob/master/crop_faces.py
+  * 1でダウンロードした画像とアノーテションファイルより猫の顔部分の切り出しを行う
+    * https://github.com/t-abe/cat-face-detection/blob/master/crop_faces.py
+3. 負例画像の作成 
   * 適当な風景画像をダウンロード
     * 何かまとめてダウンロードできる良いサイトはないだろうか？
-  * n_negatives = int(sys.argv[3]) は負例画像数？
+  * ダウンロードした画像から負例画像を作成する
+    * https://github.com/t-abe/cat-face-detection/blob/master/crop_negatives.py
+    * n_negatives = int(sys.argv[3]) はサンプルとして作成する負例画像数と等しい
+4. セルごとにLBP特徴量のヒストグラムを求めるプログラム写経
+  * P.163 リスト1 get_histogram
+5. 正・負例それぞれの特徴量を計算
+  * P.164 リスト2 get_features
   
 
