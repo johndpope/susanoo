@@ -29,7 +29,7 @@ def main():
         [0 for i in range(n_negative)]
     )
 
-    pickle.dump((X, y), open(sys.argv[3], 'w'))
+    pickle.dump((X, y), open(sys.argv[3], 'wb'))
 
 
 if __name__ == "__main__":
