@@ -107,18 +107,18 @@ parser.add_argument('--iter', default=5000, type=int,
 
 CUDA(Compute Unified Device Architecture: クーダ)
 
-  NVIDIAが提供するGPU向けのC言語の統合開発環境であり、コンパイラ(nvcc)やライブラリなどから構成されている。
+> NVIDIAが提供するGPU向けのC言語の統合開発環境であり、コンパイラ(nvcc)やライブラリなどから構成されている。
 
 Deep LearningのインストールのドキュメントにCUDAを使用するか書かれていることがあります。
 CUDAの設定をするということは、Deep LearningでGPUを使用してできるようにするということのようです。
 
 Graphics Processing Unit(GPU: グラフィックス プロセッシング ユニット)
 
-  パーソナルコンピュータやワークステーション等の画像処理を担当する主要な部品のひとつ
+> パーソナルコンピュータやワークステーション等の画像処理を担当する主要な部品のひとつ
 
 HDF5(Hierarchical Data Format 5)
 
-  科学技術計算などの分野で、たとえば時系列に変化する大量のデータを逐一記録するときなどに使われる。
-  HDF5のデータはデータセットとグループという単位からなる。
+> 科学技術計算などの分野で、たとえば時系列に変化する大量のデータを逐一記録するときなどに使われる。
+> HDF5のデータはデータセットとグループという単位からなる。
 
 Convolutional Neural Network(CNN: 畳み込みニューラルネットワーク)
