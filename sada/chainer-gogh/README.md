@@ -54,6 +54,7 @@ This class only supports Python 2.7, since the compiled module for protocol buff
 
 以下はPython 2をインストールした時の作業したコマンドです。
 
+```
 $ pyenv install 2.7.11
 $ pyenv global 2.7.11
 
@@ -62,28 +63,37 @@ $ pip install scipy
 $ pip install matplotlib
 $ pip install scikit-learn
 $ pip install pillow
+```
 
 [Chainer](https://github.com/pfnet/chainer) のREADMEに書いてあったHDF5の準備です。
 HDF5を使用しないので必要なかったかもしれません。
 
+```
 $ sudo apt-get install libhdf5-dev
 $ pip install cython
 $ pip install h5py
+```
 
 chainer-goghのREADMEを参考に画像の画風を変換しました。
 
+```
 $ pip install chainer
 $ git clone https://github.com/mattya/chainer-gogh.git
 $ cd chainer-gogh
+```
 
 Caffeの学習済みモデルをダウンロードします。
 
+```
 $ wget https://www.dropbox.com/s/0cidxafrb2wuwxw/nin_imagenet.caffemodel
 $ mkdir cats
+```
 
 以下を実行すると完了するまでにとても時間が掛かります。
 
+```
 $ python chainer-gogh.py -m nin -i sample_images/cat.png -s sample_images/style_0.png -o cats -g -1
+```
 
 
 chainer-gogh.pyの以下によるとデフォルトで5000回繰り返して完了するようです。
