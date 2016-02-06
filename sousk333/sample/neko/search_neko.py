@@ -1,5 +1,6 @@
 from skimage import io, feature, color, transform
 from get_histogram import get_histogram
+import matplotlib.pyplot as plt
 import pickle
 import sys
 
@@ -52,6 +53,7 @@ def overlap_score(a, b):
 
 
 detections = sorted(detections, key = lambda d: d['score'], reverse = True)
+print(detections)
 deleted = set()
 
 for i in range(len(detections)):
@@ -64,3 +66,17 @@ for i in range(len(detections)):
 detections = [d for i, d in enumerate(detections) if not i in deleted]
 
 print(detections)
+
+fig, ax1 = plt.subplots(ncols = 1, nrows = 1, figsize = (5, 3))
+ax1.imshow(io.imread(sys.argv[2]))
+for d in detections:
+    ax1.add_patch(
+        plt.Rectangle(
+            (d['x'], d['y']), d['width'], d['height'],
+            edgecolor = 'w', facecolor = 'none', linewidth = 2.5
+        )
+    )
+
+ax1.set_title('Neko')
+# ax1.axis('off')
+plt.show()
