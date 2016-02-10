@@ -17,5 +17,8 @@ haarcascades_cudaのを使用する理由は、haarcascadesのhaarcascade_fronta
 以下のコマンドで変換します。
 
 ```
-$ python get_thumbnail.py <image_path>
+$ python get_thumbnail.py
 ```
+
+imagesディレクトリに対象の画像を入れてください。
+outputディレクトリに出力されます。
