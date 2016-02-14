@@ -1,6 +1,6 @@
 # 実行環境を構築する
 ## Git clone
-``
+```
 % git clone https://github.com/mls-itoc/susanoo.git
 ```
 
@@ -23,4 +23,3 @@ jpg拡張子の画像を入れる。
 ```
 % python get_thumbnail.py
 ```
-
