@@ -7,7 +7,7 @@ import sys
 if not os.path.exists('output'):
     os.mkdir('output')
 
-def download_image(url, n):
+def download_image(url, n, prefix):
     opener = urllib2.build_opener()
     opener.addheaders = [
         ('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0'),
@@ -35,7 +35,7 @@ def download_image(url, n):
             elif content_type == 'image/gif':
                 extname = '.gif'
 
-            f = open('output/' + str(n).zfill(4) + extname, 'wb')
+            f = open('output/' + prefix + str(n).zfill(4) + extname, 'wb')
             f.write(img.read())
             f.close()
             n += 1
@@ -44,6 +44,10 @@ def download_image(url, n):
     return n
 
 q = sys.argv[1]
+prefix = ''
+if len(sys.argv) > 2:
+    prefix = sys.argv[2]
+
 queries = [
   ['', ''],
   ['ijn=2', 'start=200'],
@@ -56,4 +60,4 @@ queries = [
 n = 1
 for query in queries:
     url = 'https://www.google.co.jp/search?q=' + urllib2.quote(q) + '&sa=X&espv=2&site=webhp&biw=1446&bih=680&tbm=isch&' + query[0] + '&ei=ImDDVvmjNeTCmAWu95jIBQ&' + query[1] + '&ved=0ahUKEwj5vLCN6_zKAhVkIaYKHa47BlkQuT0IGigB&vet=10ahUKEwj5vLCN6_zKAhVkIaYKHa47BlkQuT0IGigB.ImDDVvmjNeTCmAWu95jIBQ.i'
-    n = download_image(url, n)
+    n = download_image(url, n, prefix)
