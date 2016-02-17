@@ -1,3 +1,9 @@
+Beautiful Soup4が必要です。
+
+```
+$ pip install beautifulsoup4
+```
+
 以下のコマンドでダウンロードを実行します。
 
 ```
