@@ -1,3 +1,10 @@
+thumbnailディレクトリのREADME.mdに書いてあるpythonをインストールしてください。
+
+```
+$ python --version
+Python 2.7.11 :: Anaconda 2.4.0 (64-bit)
+```
+
 必要なパッケージをインストールします。
 
 ```
