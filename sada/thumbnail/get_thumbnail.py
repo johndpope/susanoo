@@ -28,5 +28,5 @@ for path in glob.glob('images/*'):
     thumbnail = cv.CreateMat(64, 64, cv.CV_8UC3)
     cv.Resize(sub, thumbnail)
     filename = os.path.basename(path)
-    cv.SaveImage("./output/face_"+filename, sub)
+#   cv.SaveImage("./output/face_"+filename, sub)
     cv.SaveImage("./output/thumbnail_"+filename, thumbnail)
