@@ -1,0 +1,4 @@
+images/images_0/file_name.jpg 0
+images/images_1/file_name.jpg 1
+images/images_2/file_name.jpg 2
+
