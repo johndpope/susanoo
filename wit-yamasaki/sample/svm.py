@@ -28,7 +28,10 @@ def get_histogram(image):
 
 def get_features(directory):
     features = []
-    for fn in iglob('%s/*.png' % directory):
+    for fn in iglob('%s/*.*' % directory):
+        if fn.rfind("png") == -1 and \
+            fn.rfind("jpg") == -1 and \
+            fn.rfind("jpeg") == -1: continue
         image = color.rgb2gray(io.imread(fn))
         features.append(get_histogram(image).reshape(-1))
         features.append(get_histogram(np.fliplr(image)).reshape(-1))
