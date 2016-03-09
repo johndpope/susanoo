@@ -17,7 +17,7 @@ LBP_RADIUS = 3
 
 WIDTH, HEIGHT = (64, 64)
 CELL_SIZE = 4
-THRESHOLD = 1.5
+THRESHOLD = 2.9
 
 def get_histogram(image):
     lbp = feature.local_binary_pattern(image, LBP_POINTS, LBP_RADIUS, 'uniform')

@@ -1,23 +1,9 @@
-def warn(*args, **kwargs):
-    pass
-import warnings
-warnings.warn = warn
-
-import sys
 import numpy as np
-from skimage import io, feature, color
-from skimage import transform
-from glob import iglob
-import pickle
-import matplotlib.pyplot as plt
+from skimage import feature
 
 CELL_SIZE = 4
 LBP_POINTS = 24
 LBP_RADIUS = 3
-
-WIDTH, HEIGHT = (64, 64)
-CELL_SIZE = 4
-THRESHOLD = 2.9
 
 def get_histogram(image):
     lbp = feature.local_binary_pattern(image, LBP_POINTS, LBP_RADIUS, 'uniform')
@@ -36,12 +22,4 @@ def get_histogram(image):
                               x / CELL_SIZE,
                               int(lbp[y + dy, x + dx])] += 1
     return histogram
-
-svm = pickle.load(open(sys.argv[1], "rb"))
-target = color.rgb2gray(io.imread(sys.argv[2]))
-
-feature = get_histogram(target).reshape(-1)
-print(feature)
-
-print(svm.decision_function(feature))
 
